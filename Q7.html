@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+</head>
+
+<body>
+    <div style="text-align: center; padding: 100px;" id="pp">
+        <h1>Random Background</h1>
+    </div>
+    <textarea id="wr" style="text-align: center;resize: none;" rows="5" cols="180">This course will introduce students to the fundamental concepts of web
+        development. This course will equip students with the ability to design
+        and develop a dynamic website using technologies like HTML, CSS, JavaScript,
+        PHP and MySQL on platform like XAMP.</textarea>
+    <script>
+
+        setInterval(function(){
+            const r=Math.floor(Math.random()*256);
+            const g=Math.floor(Math.random()*256);
+            const b=Math.floor(Math.random()*256);
+            document.getElementById("pp").style.backgroundColor = "rgb("+r+","+g+","+b+")";
+        },2000);
+
+        setTimeout(function() {
+            let ta=document.getElementById("wr");
+            let lab=document.createElement("label");
+            lab.appendChild(document.createTextNode(ta.value));
+            lab.style.fontSize="x-large";
+            ta.style.display="none";
+            document.getElementsByTagName('body')[0].appendChild(lab);
+        },3000);
+    </script>
+</body>
+
+</html>

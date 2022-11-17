@@ -1,0 +1,23 @@
+<script>
+let pr=prompt("Enter your name");
+let c = document.cookie.split('; ');
+let cookies=[];
+let temp=0,count=0;
+for(let i=c.length-1; i>=0; i--){
+    cookies[temp++] = c[i].split('=')[1];
+ }
+for (let i = 0; i < cookies.length; i++) {
+    if(cookies[i]===pr)
+        count++;
+}
+if(count>0)
+    alert("Welcome Again "+pr);
+else
+{
+    const d = new Date();
+    d.setTime(d.getTime() + (24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = pr + "=" + pr + "; " + expires + ";path=/";
+    alert("Welcome "+pr);
+}
+</script>
